@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Animal from "./Animal";
 import AnimalCounter from "./AnimalCounter";
+import { RandomNum } from "../../sharedFuncs";
 
 class AnimalCountComponent extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class AnimalCountComponent extends Component {
     this.numberChosen = this.numberChosen.bind(this);
   }
   animalFlipHandler(e) {
-    let num = Math.floor(Math.random() * 2 + 1);
+    let num = RandomNum(2, 1);
     const newAnimal = num === 1 ? "dog" : "cat";
     this.setState(prevState => {
       return {
@@ -78,7 +79,7 @@ class AnimalCountComponent extends Component {
           }
         />
         {this.state.isWinner ? (
-          <div>You have won!</div>
+          <div className="row justify-content-center">You have won!</div>
         ) : (
           <div className="row justify-content-center">
             <button onClick={this.animalFlipHandler}>Flip the Animal!</button>
