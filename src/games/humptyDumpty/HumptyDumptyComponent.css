@@ -1,0 +1,12 @@
+.HumptyDumptyComponent img {
+  width: 100%;
+}
+.HumptyDumptyComponent button {
+  width: 18%;
+  height: 15%;
+  margin: 2px;
+  outline: 1px solid black;
+}
+.HumptyDumptyComponent .txtSize-2 .btn {
+  font-size: 2rem;
+}

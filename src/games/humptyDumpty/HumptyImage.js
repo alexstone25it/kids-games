@@ -7,7 +7,7 @@ const humptyDumptyOnWallImg = {
 
 function HumptyImage() {
   return (
-    <div className="row justify-content-center">
+    <div className="col-12 col-sm-4">
       <img src={humptyDumptyOnWallImg.src} alt={humptyDumptyOnWallImg.alt} />
     </div>
   );

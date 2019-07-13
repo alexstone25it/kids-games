@@ -1,6 +1,15 @@
 .App {
   font-family: "Bubblegum Sans", cursive;
 }
+h1 {
+  font-size: 7rem;
+}
+.txtSize-2 {
+  font-size: 2rem;
+}
+.txtSize-4 {
+  font-size: 4rem;
+}
 .blue {
   color: blue;
 }
