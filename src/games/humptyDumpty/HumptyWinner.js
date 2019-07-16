@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./Humptywinner.css";
 
 class Humptywinner extends Component {
   constructor(props) {
@@ -8,9 +7,9 @@ class Humptywinner extends Component {
   componentDidMount() {}
   render() {
     return (
-      <div className="col-12 col-sm-6 text-center">
-        <p className="txtSize-2">You guessed {this.props.word}!</p>
-        <p className="txtSize-2">You are the winner!</p>
+      <div>
+        <p className="txtSize-3">You guessed {this.props.word.name}!</p>
+        <p className="txtSize-3">You did it!</p>
       </div>
     );
   }

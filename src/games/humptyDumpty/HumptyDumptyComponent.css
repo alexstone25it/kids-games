@@ -1,5 +1,6 @@
 .HumptyDumptyComponent img {
   width: 100%;
+  max-height: 30rem;
 }
 .HumptyDumptyComponent button {
   width: 18%;
@@ -7,6 +8,6 @@
   margin: 2px;
   outline: 1px solid black;
 }
-.HumptyDumptyComponent .txtSize-2 .btn {
-  font-size: 2rem;
+.HumptyDumptyComponent .txtSize-3 .btn {
+  font-size: 3rem;
 }

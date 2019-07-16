@@ -12,9 +12,12 @@ class HumptyButtons extends Component {
   }
   letterGuessHandler(event) {
     let value = event.target.value;
-    let word = new Set(this.props.word);
+    let word = new Set(this.props.word.name);
+
     if (word.has(value)) {
       this.props.letterGuess(value);
+    } else {
+      this.props.addGuessCountHandler();
     }
     this.setState(prevState => ({
       ...prevState,
@@ -25,7 +28,7 @@ class HumptyButtons extends Component {
     const alphabet = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z";
     const alphabetArray = alphabet.split(",");
     const buttons = alphabetArray.map(item => (
-      <span className="txtSize-2" key={uuid()}>
+      <span className="txtSize-3" key={uuid()}>
         <button
           className="btn"
           disabled={this.state.disabledletters.indexOf(item) !== -1}
@@ -36,14 +39,12 @@ class HumptyButtons extends Component {
       </span>
     ));
     return (
-      <div className="col-12 col-sm-6">
-        <div
-          className="btn-group-lg text-center"
-          role="group"
-          onClick={this.letterGuessHandler}
-        >
-          {buttons}
-        </div>
+      <div
+        className="btn-group-lg text-center mt-3 mt-md-n3"
+        role="group"
+        onClick={this.letterGuessHandler}
+      >
+        {buttons}
       </div>
     );
   }
