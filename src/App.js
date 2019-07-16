@@ -1,14 +1,16 @@
 import React from "react";
 import "./App.css";
 
+import Navbar from "./navbar/Navbar";
 import PrimaryHeader from "./headers/PrimaryHeader";
-import GameGallery from "./gameGallery/GameGallery";
+import GamesComponent from "./GamesComponent";
 
 function App() {
   return (
     <div className="App container-fluid p-0">
       <PrimaryHeader />
-      <GameGallery />
+      <Navbar />
+      <GamesComponent />
     </div>
   );
 }
