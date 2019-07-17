@@ -2,7 +2,9 @@ import React, { Component } from "react";
 
 import Animal from "./Animal";
 import AnimalCounter from "./AnimalCounter";
-import { RandomNum } from "../../sharedFuncs";
+import { RandomNum } from "../../shared/funcs";
+import { RegButton } from "../../shared/buttons";
+import SubHeading from "../../shared/headers/SubHeading/SubHeading";
 
 class AnimalCountComponent extends Component {
   constructor(props) {
@@ -63,6 +65,7 @@ class AnimalCountComponent extends Component {
     };
     return (
       <div className="container-fluid AnimalCountComponent">
+        <SubHeading>Animal Counting</SubHeading>
         <Animal animal={this.state.animal === "dog" ? dogImg : catImg} />
 
         <AnimalCounter
@@ -82,12 +85,16 @@ class AnimalCountComponent extends Component {
           <div className="row justify-content-center">You have won!</div>
         ) : (
           <div className="row justify-content-center">
-            <button onClick={this.animalFlipHandler}>Flip the Animal!</button>
+            <RegButton onClick={this.animalFlipHandler}>
+              Flip the Animal!
+            </RegButton>
           </div>
         )}
 
         <div className="row justify-content-center">
-          <button onClick={this.resetHandler}>Count the animals again!</button>
+          <RegButton onClick={this.resetHandler}>
+            Count the animals again!
+          </RegButton>
         </div>
       </div>
     );

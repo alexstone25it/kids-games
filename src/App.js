@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 
 import Navbar from "./navbar/Navbar";
-import PrimaryHeader from "./headers/PrimaryHeader";
+import PrimaryHeader from "./shared/headers/PrimaryHeader/PrimaryHeader";
 import GamesComponent from "./GamesComponent";
 
 function App() {

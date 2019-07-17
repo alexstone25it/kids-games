@@ -5,10 +5,11 @@ import HumptyImage from "./HumptyImage";
 import HumptyWord from "./HumptyWord";
 import HumptyButtons from "./HumptyButtons";
 import HumptyWinner from "./HumptyWinner";
+import SubHeading from "../../shared/headers/SubHeading/SubHeading";
 
 import "./HumptyDumptyComponent.css";
 import { WORDS } from "./data/Words";
-import { RandomNum } from "../../sharedFuncs";
+import { RandomNum } from "../../shared/funcs";
 
 class HumptyDumptyComponent extends Component {
   constructor(props) {
@@ -58,11 +59,7 @@ class HumptyDumptyComponent extends Component {
       );
     return (
       <div className="container-fluid HumptyDumptyComponent">
-        <div className="row justify-content-center">
-          <header>
-            <h2 className="txtSize-4">Humpty Dumpty on the Wall</h2>
-          </header>
-        </div>
+        <SubHeading>Humpty Dumpty On The Wall</SubHeading>
         <div className="row justify-content-center text-center txtSize-3">
           <div className="col-12 col-sm-6 offset-sm-1 col-md-4 offset-md-0">
             <HumptyImage />
