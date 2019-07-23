@@ -1,4 +1,4 @@
-export const WORDS = [
+export const ENGLISH_WORDS = [
   {
     name: "apple",
     src: require("../../../assets/images/twinsfisch-uSPjZzYwXO4-unsplash.jpg"),

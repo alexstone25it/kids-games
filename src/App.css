@@ -19,11 +19,17 @@ h1 {
 .red {
   color: red;
 }
+.purple {
+  color: purple;
+}
 .pink {
   color: pink;
 }
 .green {
   color: lightgreen;
+}
+.darkgreen {
+  color: darkgreen;
 }
 .yellow {
   color: yellow;

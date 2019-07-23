@@ -1,42 +1,39 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { RegButton } from "../../shared/buttons";
+import HelperModal from "../../shared/components/HelperModal";
+import DiceRollModalBody from "./DiceRollModalBody";
 
 class DiceRollHelper extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      help: false
+      helpNeeded: false
     };
-    this.helpButtonHandler = this.helpButtonHandler.bind(this);
+    this.helpButtonToggleHandler = this.helpButtonToggleHandler.bind(this);
   }
-  helpButtonHandler() {
+  helpButtonToggleHandler() {
     this.setState({
-      help: true
+      helpNeeded: !this.state.helpNeeded
     });
   }
   render() {
-    let helper;
-    if (!this.state.help) {
-      helper = (
-        <RegButton onClick={this.helpButtonHandler}>
+    return (
+      <Fragment>
+        <RegButton onClick={this.helpButtonToggleHandler}>
           Do you need some help?
         </RegButton>
-      );
-    } else if (this.props.mathSymbol === "+") {
-      helper = (
-        <div>
-          {"*".repeat(this.props.die1)} + {"*".repeat(this.props.die2)}
-          <p>Count all the stars</p>
-        </div>
-      );
-    } else {
-      helper = <div>something better than this</div>;
-    }
-    return helper;
+        {this.state.helpNeeded && (
+          <HelperModal helpButtonToggle={this.helpButtonToggleHandler}>
+            <DiceRollModalBody
+              bigDie={this.props.bigDie}
+              littleDie={this.props.littleDie}
+              mathSymbol={this.props.mathSymbol}
+            />
+          </HelperModal>
+        )}
+      </Fragment>
+    );
   }
 }
 
 export default DiceRollHelper;
-{
-  /* make as a modal, change stars to yellow, if to be minus use a timeout and then black out the num of stars??*/
-}

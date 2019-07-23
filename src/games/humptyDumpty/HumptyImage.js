@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const humptyDumptyOnWallImg = {
   src: require("../../assets/images/humpty.jpg"),
@@ -7,9 +7,9 @@ const humptyDumptyOnWallImg = {
 
 function HumptyImage() {
   return (
-    <div>
+    <Fragment>
       <img src={humptyDumptyOnWallImg.src} alt={humptyDumptyOnWallImg.alt} />
-    </div>
+    </Fragment>
   );
 }
 

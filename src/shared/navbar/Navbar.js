@@ -16,7 +16,7 @@ class Navbar extends Component {
   }
   render() {
     return (
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark text-center">
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark text-center mt-n2">
         <button
           className="navbar-toggler ml-auto"
           type="button"
@@ -30,7 +30,7 @@ class Navbar extends Component {
             this.state.navOpen ? { display: "block" } : { display: "none" }
           }
         >
-          <ul className="navbar-nav">
+          <ul className="navbar-nav mx-auto">
             <li className="nav-item">
               <NavLink to="/" className="nav-link">
                 Game Gallery

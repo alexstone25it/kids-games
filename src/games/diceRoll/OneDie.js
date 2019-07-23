@@ -35,7 +35,9 @@ class OneDie extends Component {
       default:
         renderedDie = <FontAwesomeIcon icon={faDiceSix} />;
     }
-    return <div>{renderedDie}</div>;
+    return (
+      <div className="DiceRollComponent-OneDie-dieWrapper">{renderedDie}</div>
+    );
   }
 }
 

@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 const uuid = require("uuid/v4");
 
-class AnimalCounter extends Component {
+class Counter extends Component {
   constructor(props) {
     super(props);
     this.numberChosenHandler = this.numberChosenHandler.bind(this);
@@ -21,17 +21,11 @@ class AnimalCounter extends Component {
     let suggest = this.props.countGuess && this.suggestHandler();
 
     return (
-      <div className="container AnimalCounter">
+      <Fragment>
         <div className="row justify-content-center">
-          <p>There have been {this.props.dogCount} dogs.</p>
+          <label>{this.props.counterIntroText}</label>
         </div>
-        <div className="row justify-content-center">
-          <p> There have been {this.props.catCount} cats.</p>
-        </div>
-        <div className="row justify-content-center">
-          <label>How many dogs and cats have you seen?</label>
-        </div>
-        <div className="btn-toolbar" role="toolbar">
+        <div className="btn-toolbar justify-content-center" role="toolbar">
           <div
             className="btn-group"
             role="group"
@@ -53,9 +47,9 @@ class AnimalCounter extends Component {
           <p>{this.props.countGuess}</p>
           {suggest}
         </div>
-      </div>
+      </Fragment>
     );
   }
 }
 
-export default AnimalCounter;
+export default Counter;

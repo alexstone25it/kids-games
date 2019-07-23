@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-
+import "./AnimalCountComponent.css";
 import Animal from "./Animal";
-import AnimalCounter from "./AnimalCounter";
+import Counter from "../../shared/components/Counter";
 import { RandomNum } from "../../shared/funcs";
-import { RegButton } from "../../shared/buttons";
+import { RegButton, DiffGameButton } from "../../shared/buttons";
 import SubHeading from "../../shared/headers/SubHeading/SubHeading";
 
 class AnimalCountComponent extends Component {
@@ -50,7 +50,8 @@ class AnimalCountComponent extends Component {
         animal: "dog",
         dogCount: 0,
         catCount: 0,
-        totalCount: 0
+        totalCount: 0,
+        isWinner: false
       };
     });
   }
@@ -63,28 +64,37 @@ class AnimalCountComponent extends Component {
       src: require("../../assets/images/akemy-mory-4tc7_jEgGzg-unsplash.jpg"),
       alt: "A cat."
     };
+    const counterIntroText = "How many dogs and cats have you seen?";
     return (
       <div className="container-fluid AnimalCountComponent">
         <SubHeading>Animal Counting</SubHeading>
-        <Animal animal={this.state.animal === "dog" ? dogImg : catImg} />
-
-        <AnimalCounter
-          dogCount={this.state.dogCount}
-          catCount={this.state.catCount}
-          totalCount={this.state.totalCount}
-          numberChosen={this.numberChosen}
-          countGuess={
-            !this.state.isWinner &&
-            this.state.countGuess > 0 &&
-            this.state.totalCount > 1
-              ? this.state.countGuess
-              : null
-          }
-        />
+        <div className="row col-8 col-md-4 offset-2 offset-md-4 ">
+          <Animal animal={this.state.animal === "dog" ? dogImg : catImg} />
+        </div>
+        <div className="container">
+          <div className="row justify-content-center">
+            <p>There have been {this.state.dogCount} dogs.</p>
+          </div>
+          <div className="row justify-content-center">
+            <p> There have been {this.state.catCount} cats.</p>
+          </div>
+          <Counter
+            counterIntroText={counterIntroText}
+            totalCount={this.state.totalCount}
+            numberChosen={this.numberChosen}
+            countGuess={
+              !this.state.isWinner &&
+              this.state.countGuess > 0 &&
+              this.state.totalCount > 1
+                ? this.state.countGuess
+                : null
+            }
+          />
+        </div>
         {this.state.isWinner ? (
           <div className="row justify-content-center">You have won!</div>
         ) : (
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mb-3">
             <RegButton onClick={this.animalFlipHandler}>
               Flip the Animal!
             </RegButton>
@@ -96,6 +106,7 @@ class AnimalCountComponent extends Component {
             Count the animals again!
           </RegButton>
         </div>
+        <DiffGameButton />
       </div>
     );
   }

@@ -1,0 +1,9 @@
+.DiceRollComponent {
+  font-size: 2rem;
+}
+.DiceRollComponent-OneDie-dieWrapper {
+  font-size: 10rem;
+}
+.DiceRollComponent-OneDie-dieWrapper svg {
+  color: purple;
+}

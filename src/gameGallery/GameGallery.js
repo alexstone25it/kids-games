@@ -12,17 +12,17 @@ function GameGallery() {
   const humptyImg = require("../assets/images/humpty.jpg");
 
   return (
-    <div className="container-fluid GameGallery">
+    <div className="GameGallery container-fluid mt-5">
       <div className="row text-center">
         <p className="col-12">What do you want to play?</p>
       </div>
-      <div className="row text-center">
-        <div className="col-12 col-sm-4">
+      <div className="row">
+        <div className="col-12 col-sm-4 mt-3 mt-sm-0">
           <Link to="/animalcount">
-            <header className="row">
-              <h3>Animal Counting</h3>
+            <header className="row justify-content-center">
+              <h3 className="darkgreen txtSize-3">Animal Counting</h3>
             </header>
-            <div className="row">
+            <div className="row justify-content-center">
               <div className="col-6">
                 <img src={catImg} alt="A cat" className="GameGallery-image" />
               </div>
@@ -32,28 +32,28 @@ function GameGallery() {
             </div>
           </Link>
         </div>
-        <div className="col-12 col-sm-4">
+        <div className="col-12 col-sm-4 mt-5 mt-sm-0">
           <Link to="/diceroll">
-            <header className="row">
-              <h3>Dice Rolling</h3>
+            <header className="row justify-content-center">
+              <h3 className="blue txtSize-3">Dice Rolling</h3>
             </header>
             <div className="row">
-              <div className="col-6">
+              <div className="col-6 text-right">
                 <FontAwesomeIcon icon={faDiceOne} />
               </div>
-              <div className="col-6">
+              <div className="col-6 text-left">
                 <FontAwesomeIcon icon={faDiceSix} />
               </div>
             </div>
           </Link>
         </div>
-        <div className="col-12 col-sm-4">
+        <div className="col-12 col-sm-4 mt-5 mt-sm-0">
           <Link to="/humptydumpty">
-            <header className="row">
-              <h3>Humpty Dumpty on the Wall</h3>
+            <header className="row justify-content-center">
+              <h3 className="red txtSize-3">Humpty Dumpty</h3>
             </header>
 
-            <div className="row">
+            <div className="row justify-content-center">
               <div className="col">
                 <img
                   src={humptyImg}

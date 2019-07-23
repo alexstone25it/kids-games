@@ -1,11 +1,10 @@
-import React from "react";
-import "./Animal.css";
+import React, { Fragment } from "react";
 
 function Animal(props) {
   return (
-    <div className="row col-8 col-md-4 offset-2 offset-md-4 Animal">
+    <Fragment>
       <img src={props.animal.src} alt={props.animal.alt} />
-    </div>
+    </Fragment>
   );
 }
 
